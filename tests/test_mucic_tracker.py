@@ -27,7 +27,7 @@ An expection should be raised
 def test_add_empty_track():
     tracker = MusicTracker()
     with pytest.raises(Exception) as error:
-        tracker.add("")
+        tracker.add_track("")
 
     assert str(error.value) == "Track name cannot be empty!"
 
@@ -38,7 +38,7 @@ An expection should be raised
 def test_add_incorrect_type():
     tracker = MusicTracker()
     with pytest.raises(Exception) as error:
-        tracker.add(5.2)
+        tracker.add_track(5.2)
 
     assert str(error.value) == "Track name must be of type string!"
 

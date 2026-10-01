@@ -6,6 +6,12 @@ class MusicTracker:
         self.tracks: list[str] = []
 
     def add_track(self, track: str) -> None:
+        if track == "":
+            raise Exception ("Track name cannot be empty!")
+
+        if not isinstance(track, str):
+            raise Exception ("Track name must be of type string!")
+
         self.tracks.append(track)
 
     def list_tracks(self) -> list[str]:
